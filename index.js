@@ -17,3 +17,22 @@ const questions = [
   },
   // Add more questions for installation, usage, contribution, tests, license, GitHub username, and email, etc..
 ];
+
+// Writes README file
+function writeToFile(fileName, data) {
+  fs.writeFileSync(fileName, data, (err) => {
+    if (err) throw err;
+    console.log('README.md has been generated successfully!');
+  });
+}
+
+// Iniatlizes the app
+function init() {
+  inquirer.prompt(questions).then((responses) => {
+    const markdown = generateMarkdown(responses);
+    writeToFile('README.md', markdown);
+  });
+}
+
+// Function call to initialize app
+init();
