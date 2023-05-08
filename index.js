@@ -15,6 +15,11 @@ const questions = [
     name: 'description',
     message: 'Please provide a description of your project:',
   },
+  {
+    type: 'input',
+    name: 'repoName',
+    message: 'What is your repository name?',
+  },
   // Add more questions for installation, usage, contribution, tests, license, GitHub username, and email, etc..
 ];
 

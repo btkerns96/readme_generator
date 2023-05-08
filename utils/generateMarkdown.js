@@ -1,13 +1,22 @@
 function renderLicenseBadge(license) {
-  // Add code to render the license badge
+  if (license !== 'None') {
+    return `![GitHub license](https://img.shields.io/github/license/${data.githubUsername}/${data.repoName}?style=flat-square)`;
+  }
+  return '';
 }
 
 function renderLicenseLink(license) {
-  // Add code to render the license link
+  if (license !== 'None') {
+    return `* [License](#license)`;
+  }
+  return '';
 }
 
 function renderLicenseSection(license) {
-  // Add code to render the license section
+  if (license !== 'None') {
+    return `This project is licensed under the ${license} License. For more information, please visit [${renderLicenseLink(license)}](https://choosealicense.com/licenses/${license.toLowerCase()}/)`;
+  }
+  return 'This project is not licensed.';
 }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
